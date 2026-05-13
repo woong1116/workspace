@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Product</title>
+</head>
+<body>
+    <header>
+        <h1>Amazing Product</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>제품 소개</h2>
+            <figure>
+                <img src="product.jpg" alt="제품 이미지">
+                <figcaption>혁신적인 디자인의 제품</figcaption>
+            </figure>
+            
+            <h3>주요 특징</h3>
+            <dl>
+                <dt>성능</dt>
+                <dd>초고속 처리 속도</dd>
+                
+                <dt>디자인</dt>
+                <dd>미니멀하고 세련된 외관</dd>
+                
+                <dt>가격</dt>
+                <dd>합리적인 가격대</dd>
+            </dl>
+        </section>
+        
+        <section>
+            <h2>구매하기</h2>
+            <form>
+                <fieldset>
+                    <legend>구매 옵션</legend>
+                    
+                    <label for="color">색상:</label>
+                    <select id="color" name="color">
+                        <option value="black">블랙</option>
+                        <option value="white">화이트</option>
+                        <option value="silver">실버</option>
+                    </select>
+                    
+                    <label for="quantity">수량:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+                    
+                    <button type="submit">장바구니에 담기</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

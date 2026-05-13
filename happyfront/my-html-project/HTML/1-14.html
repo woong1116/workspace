@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- submit이 클릭되면 action 에 등록된 페이지로 이동해주세요. 라는 이벤트가 등록되어있다. -->
+    <form action="/lion/lion.html">
+        <input> type="text" name="name" />
+      <input type="submit" value="클릭" />
+    </form><br>
+
+    <form action="/submit" method="post">
+    <label for="username">사용자명:</label>
+    <input type="text" id="username" name="username" required><br>
+    
+    <label for="password">비밀번호:</label>
+    <input type="password" id="password" name="password" required><br>
+    
+    <button type="submit">제출</button><br><br>
+</form>
+
+<!-- 텍스트 입력 -->
+<input type="text" placeholder="이름을 입력하세요"><br>
+
+<!-- 이메일 -->
+<input type="email" placeholder="email@example.com"><br>
+
+<!-- 숫자 -->
+<input type="number" min="1" max="100"><br>
+
+<!-- 날짜 -->
+<input type="date"><br>
+
+<!-- 체크박스 -->
+<input type="checkbox" id="agree" name="agree">
+<label for="agree">동의합니다</label><br>
+
+<!-- 라디오 버튼 -->
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">남성</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">여성</label><br>
+
+<!-- 파일 업로드 -->
+<input type="file" accept="image/*"><br><br>
+
+<!-- 텍스트 영역 -->
+<textarea rows="4" cols="50" placeholder="내용을 입력하세요"></textarea><br>
+
+<!-- 선택 상자 -->
+<select name="city">
+    <option value="">도시를 선택하세요</option>
+    <option value="seoul">서울</option>
+    <option value="busan">부산</option>
+    <option value="daegu">대구</option>
+</select>
+
+  </body>
+</html>

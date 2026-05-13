@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event exam</title>
+</head>
+<body>
+    <form action="06.html" id="form">
+        이름 : <input type="text" name="name"><br>
+        비밀번호 : <input type="password" name="pw"><br>
+        비밀번호 확인 : <input type="password" name="pw2"><br>
+        <input type="submit" value="등록">
+    </form>
+
+    <script>
+        // e.preventDefault(); // 기존 이벤트 제거
+
+       const form = document.getElementById("form");
+       form.addEventListener("submit", function(e) {
+        
+            const name = this.name.value;
+            const pw = this.pw.value;
+            const pw2 = this.pw2.value;
+
+            if (name === "") {
+                   e.preventDefault();
+                alert("이름을 입력하세요");
+                return form.name.focus();
+            } else if (pw === "") {
+                e.preventDefault();
+                alert("비밀번호를 입력하세요");
+                return form.pw.focus();
+            } else if (pw2 === "") {
+                e.preventDefault();
+                alert("비밀번호 확인을 입력하세요");
+                return form.pw2.focus();
+            } else if (pw !== pw2) {
+                e.preventDefault();
+                alert("비밀번호가 일치하지 않습니다");
+                return form.pw2.focus();
+            }
+        });
+        
+    </script>
+</body>
+</html>

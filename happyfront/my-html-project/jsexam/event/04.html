@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event 04</title>
+</head>
+<body>
+    <button value="1">클릭</button>
+    <button value="2">클릭</button>
+    <button value="3">클릭</button>
+
+    <script>
+        // const buttonList = document.getElementsByTagName("button");
+        // // console.log(button);
+        // buttonList[0].addEventListener("click", () => {
+        //     const color = prompt("색깔을 입력하세요");
+        //     document.body.style.backgroundColor = color;
+        // });
+
+        const button = document.querySelector("button");
+        console.log(button);
+
+        const bList = document.querySelectorAll("button");
+        console.log(bList);
+
+        button.addEventListener("click", function(event) {
+            console.log(event);
+            console.log(this); // function으로 사용 시 (버튼)이 this, 화살표함수는 window 객체가 리턴
+            console.log(event.target);
+        });
+
+        for (let i = 0; i <bList.length; i++) {
+            bList[i].addEventListener("click",(e) => {
+            console.log(e.target);
+            console.log(e.target.value);
+        });
+        }
+    </script>
+</body>
+</html>

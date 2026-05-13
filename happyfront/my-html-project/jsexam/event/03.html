@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <h2 id="number">0</h2>
+
+    <div>
+        <button id="increase">+1</button>
+        <button id="decrease">-1</button>
+    </div>
+
+    <script>
+        document.getElementById("number").innerText = 10;
+
+        const btns = document.querySelectorAll("button");
+        btns[0].addEventListener("click", plus);
+        btns[1].addEventListener("click", minus);
+
+        function plus() {
+            const number = document.getElementById("number");
+            number.innerText = Number(number.innerText) + 1;
+        }
+
+        function minus() {
+            const number = document.getElementById("number");
+            number.innerText = Number(number.innerText) - 1;
+        }
+    </script>
+
+    <!-- <script>
+        const numbers = document.getElementById("numbers");
+
+        document.getElementById("increase").addEventListener("click", () => {
+            numbers.innerText++;
+        });
+        document.getElementById("decrease").addEventListener("click", () => {
+            numbers.innerText--;
+        });
+    </script> -->
+</body>
+</html>

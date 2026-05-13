@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event 02</title>
+</head>
+<body>
+    <button id="btn">클릭</button>
+
+     <script>
+        // 소스(대상(html tag)) - 이벤트 리스너
+        // 소스.addEventListener('이벤트이름', '이벤트핸들러(함수 - 이벤트 발생 시 할일)', 캡쳐링 여부);
+       
+        // 1. 어떤 대상한테 이벤트 걸어줄지
+        const btn = document.getElementById("btn");
+        // 2. 귀 달아주기
+        btn.addEventListener("dblclick", hi);
+
+        function hi() {
+            alert("hello");
+        }
+
+        btn.addEventListener("click", () => alert("안녕"));
+
+    </script>
+</body>
+</html>
