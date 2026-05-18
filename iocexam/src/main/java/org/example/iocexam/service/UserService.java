@@ -1,4 +1,7 @@
 package org.example.iocexam.service;
 
-public class UserService {
+import org.example.iocexam.domain.User;
+
+public interface UserService {
+    public void joinUser(User user);
 }
