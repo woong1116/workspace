@@ -2,13 +2,20 @@ package org.example.iocexam.controller;
 
 import org.example.iocexam.domain.User;
 import org.example.iocexam.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
+//@Component
+@Controller
 public class UserController {
+    @Autowired
     private UserService userService;
 
-    public UserController(UserService userService){
-        this.userService=userService;
-    }
+//    public UserController(UserService userService){
+//        this.userService=userService;
+//        System.out.println("UserController 생성");
+//    }
 
     public void joinUser(){
 //        회원정보는 (실제 동작되는 서비스에서는 ) 사용자로 부터 얻어올거예요.
