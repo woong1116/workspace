@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springmvc
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html

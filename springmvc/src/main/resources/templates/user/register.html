@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Registration</title>
+    <style>
+        .error { color: red; }
+        .field-error { border: 1px solid red; }
+    </style>
+</head>
+<body>
+<h1>Register</h1>
+
+<form th:action="@{/users/register}"
+      th:object="${user}"
+      method="post">
+
+    <!-- Global errors -->
+    <div th:if="${#fields.hasGlobalErrors()}" class="error">
+        <p th:each="err : ${#fields.globalErrors()}"
+           th:text="${err}">Error</p>
+    </div>
+
+    <!-- Username field -->
+    <div>
+        <label for="username">Username:</label>
+        <input type="text"
+               th:field="*{username}"
+               th:classappend="${#fields.hasErrors('username')} ? 'field-error'" />
+        <span th:if="${#fields.hasErrors('username')}"
+              th:errors="*{username}"
+              class="error">Error</span>
+    </div>
+
+    <!-- Email field -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="email"
+               th:field="*{email}"
+               th:classappend="${#fields.hasErrors('email')} ? 'field-error'" />
+        <span th:if="${#fields.hasErrors('email')}"
+              th:errors="*{email}"
+              class="error">Error</span>
+    </div>
+
+    <!-- Password field -->
+    <div>
+        <label for="password">Password:</label>
+        <input type="password"
+               th:field="*{password}"
+               th:classappend="${#fields.hasErrors('password')} ? 'field-error'" />
+        <span th:if="${#fields.hasErrors('password')}"
+              th:errors="*{password}"
+              class="error">Error</span>
+    </div>
+
+    <!-- Birth date field -->
+    <div>
+        <label for="birthDate">Birth Date:</label>
+        <input type="date"
+               th:field="*{birthDate}"
+               th:classappend="${#fields.hasErrors('birthDate')} ? 'field-error'" />
+        <span th:if="${#fields.hasErrors('birthDate')}"
+              th:errors="*{birthDate}"
+              class="error">Error</span>
+    </div>
+
+    <button type="submit">Register</button>
+    <a th:href="@{/}">Cancel</a>
+</form>
+</body>
+</html>
