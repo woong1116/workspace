@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BoardList</title>
+  <link rel="stylesheet" th:href="@{/css/friend.css}">
+</head>
+<body>
+<h1>글 목록</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>제목</th>
+    <th>이름</th>
+    <th>등록일</th>
+  </tr>
+  <tr th:each="board : ${board}">
+    <td th:text="${board.id}"></td>
+    <td>
+      <a th:href="@{/board/{id}(id=${board.id})}" th:text="${board.title}"></a>
+    </td>
+    <td th:text="${board.name}"></td>
+    <td>
+      <a th:href="@{/friend/update/{id}(id=${friend.id})}">수정</a>
+    </td>
+    <td>
+      <a th:href="@{/friend/delete/{id}(id=${friend.id})}">삭제</a>
+    </td>
+  </tr>
+</table>
+<div th:if="${friends.totalPages > 1}">
+  <ul>
+    <li th:each="i:${#numbers.sequence(1,friends.totalPages)}">
+      <a th:href="@{/friend/list(page=${i - 1})}" th:text="${i}" th:classappend="${friends.number == i - 1}?'active'"></a>
+    </li>
+  </ul>
+</div>
+
+<a th:href="@{/friend/add}">친구추가</a>
+</body>
+</html>

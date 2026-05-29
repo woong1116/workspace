@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WriteForm</title>
+    <link rel="stylesheet" th:href="@{/css/friend.css}">
+</head>
+<body>
+<h1>글 등록 폼</h1>
+<form action="/board/write" method="post">
+    <table>
+        <tr>
+            <td>
+                <label for="name"> 이름 : </label>
+                <input type="text" name="name" id="name"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="title"> 제목 : </label>
+                <input type="text" name="title" id="title"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="content">본문</label>
+                <textarea id="content" name="content" rows="5" cols="50"></textarea><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password"> 암호 : </label>
+                <input type="password" name="password" id="password"><br>
+            </td>
+        </tr>
+
+    </table>
+    <button type="submit"> 등록 </button>
+</form>
+</body>
+</html>

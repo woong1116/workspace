@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>친구목록보기</title>
+    <link rel="stylesheet" th:href="@{/css/friend.css}">
+</head>
+<body>
+<h1>친구목록보기</h1>
+
+<table>
+    <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>이메일</th>
+        <th>수정</th>
+        <th>삭제</th>
+    </tr>
+    <tr th:each="friend : ${friends}">
+        <td th:text="${friend.id}"></td>
+        <td>
+            <a th:href="@{/friend/{id}(id=${friend.id})}" th:text="${friend.name}"></a>
+        </td>
+        <td th:text="${friend.email}"></td>
+        <td>
+            <a th:href="@{/friend/update/{id}(id=${friend.id})}">수정</a>
+        </td>
+        <td>
+            <a th:href="@{/friend/delete/{id}(id=${friend.id})}">삭제</a>
+        </td>
+    </tr>
+</table>
+<div th:if="${friends.totalPages > 1}">
+    <ul>
+        <li th:each="i:${#numbers.sequence(1,friends.totalPages)}">
+            <a th:href="@{/friend/list(page=${i - 1})}" th:text="${i}" th:classappend="${friends.number == i - 1}?'active'"></a>
+        </li>
+    </ul>
+</div>
+
+<a th:href="@{/friend/add}">친구추가</a>
+</body>
+</html>

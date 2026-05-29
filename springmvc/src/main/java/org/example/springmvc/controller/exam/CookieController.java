@@ -1,4 +1,4 @@
-package org.example.springmvc.controller;
+package org.example.springmvc.controller.exam;
 
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -6,10 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,5 +115,19 @@ public class CookieController {
 
 
 //    html 은 1. 로그인폼  2. userList 화면
+
+    @GetMapping("/counter")
+    public String counter(@CookieValue(value = "visitCount", defaultValue = "0") int visitCount, HttpServletResponse response, Model model) {
+        visitCount++;
+
+        Cookie cookie = new Cookie("visitCount", String.valueOf(visitCount));
+        cookie.setPath("/");
+        cookie.setMaxAge(60*60*24);
+        response.addCookie(cookie);
+
+        model.addAttribute("visitCount", visitCount);
+
+        return "exam/counter";
+    }
 
 }
