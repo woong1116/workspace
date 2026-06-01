@@ -15,7 +15,7 @@ public class BoardApplication {
 
     @Bean
     CommandLineRunner init(BoardRepository boardRepository) {
-        return args -> {};
+        return args -> {
+        };
     }
-
 }

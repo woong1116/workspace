@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BoardUpdate</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>글 수정</h1>
+
+<form action="/board/update" method="post">
+    <table>
+        <tr>
+            <td>
+                <label th:text="'ID : ' + ${board.id}"></label>
+                <input type="hidden" name="id" th:value="${board.id}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="name"> 이름 : </label>
+                <input type="text" name="name" id="name" th:value="${board.name}"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="title"> 제목 : </label>
+                <input type="text" name="title" id="title" th:value="${board.title}"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="content">본문</label>
+                <textarea id="content" name="content" rows="5" cols="50" th:text="${board.content}"></textarea><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password"> 암호 : </label>
+                <input type="password" name="password" id="password"><br>
+            </td>
+        </tr>
+    </table>
+    <p th:if="${error}" th:text="${error}" style="color:red;"></p>
+
+    <div style="display: flex; gap: 10px;">
+        <button type="submit"> 완료</button>
+        <a th:href="@{/board/view/{id}(id=${board.id})}">
+            <button type="button"> 취소</button>
+        </a>
+    </div>
+
+</form>
+</body>
+</html>

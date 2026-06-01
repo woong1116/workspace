@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BoardDelete</title>
+</head>
+<body>
+
+<h1>암호 확인</h1>
+
+<form th:action="@{/board/delete/{id}(id=${board.id})}" method="post">
+    <input type="hidden" name="id" th:value="${board.id}">
+
+    <div>
+        <label for="password">암호 :</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <p th:if="${error}" th:text="${error}" style="color:red;"></p>
+
+    <div style="display: flex; gap: 10px;">
+        <button type="submit">삭제</button>
+        <button type="button" th:onclick="|location.href='@{/board/view/{id}(id=${board.id})}'|">취소</button>
+    </div>
+
+</form>
+</body>
+</html>

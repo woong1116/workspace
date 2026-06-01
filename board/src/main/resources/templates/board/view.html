@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BoardView</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>상세보기</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>제목</th>
+        <th>이름</th>
+        <th>암호</th>
+    </tr>
+    <tr>
+        <td th:text="${board.id}"></td>
+        <td th:text="${board.title}"></td>
+        <td th:text="${board.name}"></td>
+        <td th:hidden="${board.password}"></td>
+    </tr>
+    <tr>
+        <th>본문</th>
+    </tr>
+    <tr>
+        <td th:text="${board.content}"></td>
+    </tr>
+    <tr>
+        <th>등록일</th>
+        <th>수정일</th>
+    </tr>
+    <tr>
+        <td th:text="${board.createdAt}"></td>
+        <td th:text="${board.updatedAt}"></td>
+    </tr>
+</table>
+
+<div style="display: flex; gap: 10px;">
+    <div>
+        <button th:onclick="|location.href='@{/board/updateform/{id}(id=${board.id})}'|">수정</button>
+        <button th:onclick="|location.href='@{/board/deleteform/{id}(id=${board.id})}'|">삭제</button>
+    </div>
+    <button th:onclick="|location.href='@{/board/list}'|" style="margin-left: auto;">목록</button>
+</div>
+
+</body>
+</html>

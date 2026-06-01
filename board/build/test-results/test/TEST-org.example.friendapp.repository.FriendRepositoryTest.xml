@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.friendapp.repository.FriendRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-28T08:53:24.493Z" hostname="ung-ui-MacBook.local" time="0.496">
+  <properties/>
+  <testcase name="paging()" classname="org.example.friendapp.repository.FriendRepositoryTest" time="0.448"/>
+  <testcase name="save()" classname="org.example.friendapp.repository.FriendRepositoryTest" time="0.047"/>
+  <system-out><![CDATA[17:53:23.326 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.friendapp.repository.FriendRepositoryTest]: FriendRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:53:23.376 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.friendapp.FriendappApplication for test class org.example.friendapp.repository.FriendRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.14)
+
+2026-05-28T17:53:23.567+09:00  INFO 7917 --- [    Test worker] o.e.f.repository.FriendRepositoryTest    : Starting FriendRepositoryTest using Java 21.0.11 with PID 7917 (started by woong in /Users/woong/workspace/friendapp)
+2026-05-28T17:53:23.568+09:00  INFO 7917 --- [    Test worker] o.e.f.repository.FriendRepositoryTest    : No active profile set, falling back to 1 default profile: "default"
+2026-05-28T17:53:23.829+09:00  INFO 7917 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2026-05-28T17:53:23.846+09:00  INFO 7917 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 JDBC repository interface.
+2026-05-28T17:53:23.996+09:00  INFO 7917 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-28T17:53:24.211+09:00  INFO 7917 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33627576
+2026-05-28T17:53:24.212+09:00  INFO 7917 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-28T17:53:24.487+09:00  INFO 7917 --- [    Test worker] o.e.f.repository.FriendRepositoryTest    : Started FriendRepositoryTest in 1.042 seconds (process running for 1.608)
+Friend(id=1, name=woong, email=woong@email.com)
+Friend(id=2, name=woong, email=woong@email.com)
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/woong/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
