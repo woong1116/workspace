@@ -16,11 +16,6 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     @Transactional(readOnly = true)
-    public Iterable<Board> getBoard() {
-        return boardRepository.findAll();
-    }
-
-    @Transactional(readOnly = true)
     public Page<Board> getBoard(Pageable pageable) {
         return boardRepository.findAll(pageable);
     }
