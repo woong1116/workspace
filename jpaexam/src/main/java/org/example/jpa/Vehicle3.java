@@ -5,11 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+//MappedSuperclass
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter@Setter
-public class Vehicle2 {
+public class Vehicle3 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String manufacturer;
 }
@@ -17,13 +18,13 @@ public class Vehicle2 {
 @Entity
 @Getter
 @Setter
-class Car2 extends Vehicle2 {
+class Car3 extends Vehicle3 {
     private int seatCount;
 }
 
 @Entity
 @Getter
 @Setter
-class Truck2 extends Vehicle2 {
+class Truck3 extends Vehicle3 {
     private double payloadCapacity;
 }

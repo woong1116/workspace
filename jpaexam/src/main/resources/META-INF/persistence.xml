@@ -11,6 +11,17 @@
         <class>org.example.jpa.School</class>
         <class>org.example.jpa.Book</class>
         <class>org.example.jpa.Author</class>
+        <class>org.example.jpa.Employee</class>
+        <class>org.example.jpa.Project</class>
+        <class>org.example.jpa.Person</class>
+        <class>org.example.jpa.Passport</class>
+        <class>org.example.jpa.Car</class>
+        <class>org.example.jpa.Truck</class>
+        <class>org.example.jpa.Car2</class>
+        <class>org.example.jpa.Truck2</class>
+        <class>org.example.jpa.Car3</class>
+        <class>org.example.jpa.Truck3</class>
+
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
