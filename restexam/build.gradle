@@ -6,7 +6,7 @@ plugins {
 
 group = 'org.example'
 version = '0.0.1-SNAPSHOT'
-description = 'springdatajpa'
+description = 'restexam'
 
 java {
     toolchain {
@@ -19,17 +19,21 @@ repositories {
 }
 
 dependencies {
+    //xml  변환을 위해 필요함!!
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
+
+
+
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-data-jpa-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompileOnly 'org.projectlombok:lombok'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testAnnotationProcessor 'org.projectlombok:lombok'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {

@@ -1,38 +1,41 @@
-package org.example.springdatajpa;
+package org.example.springdatajpa2;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name = "lion_user")
-@Getter
-@Setter
+@Getter@Setter
 @NoArgsConstructor
-public class User {
+@Table(name = "customers")
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
+    private int age;
 
-    public User(String name, String email) {
+    public Customer(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();
+
     @Override
     public String toString() {
-        return "User{" +
+        return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", age=" + age +
                 '}';
     }
-
 }

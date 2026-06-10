@@ -1,0 +1,33 @@
+### 상품전체 리스트 조회
+GET http://localhost:8080/api/products/xml
+
+
+
+### 상품전체 리스트 조회(json)
+GET http://localhost:8080/api/products
+Accept: application/json
+
+### 상품전체 리스트 조회(xml)
+GET http://localhost:8080/api/products
+Accept: application/xml
+
+### 상품입력
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "name": "마이크",
+  "price": 50000
+}
+
+### 상품수정
+PUT http://localhost:8080/api/products/1
+Content-Type: application/json
+
+{
+  "name": "마우스",
+  "price": 30000
+}
+
+### 상품삭제
+DELETE http://localhost:8080/api/products/1

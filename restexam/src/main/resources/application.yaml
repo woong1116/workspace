@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: restexam
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpadb
+    username: mutsa
+    password: mutsapw
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql : true
+    properties:
+      hibernate:
+        format_sql: true
