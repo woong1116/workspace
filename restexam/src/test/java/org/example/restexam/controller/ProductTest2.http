@@ -1,0 +1,44 @@
+### 상품추가
+POST http://localhost:8080/api2/products
+Content-Type: application/json
+
+{
+  "name": "마우스",
+  "price": 3000
+}
+
+
+### 상품추가  -- 상품명 입력 안함.
+POST http://localhost:8080/api2/products
+Content-Type: application/json
+
+{
+  "price": 3000
+}
+
+### 상품추가  -- 상품가격이 맞지 않을 때.
+POST http://localhost:8080/api2/products
+Content-Type: application/json
+
+{
+  "name": "coffee",
+  "price": 30
+}
+
+### 상품정보수정
+PUT http://localhost:8080/api2/products/1
+Content-Type: application/json
+
+{
+  "name": "LED test"
+}
+
+
+### 상품정보 조회
+GET http://localhost:8080/api2/products
+
+
+### 상품정보 조회  --  헤더정보 포함해서 보내기.
+GET http://localhost:8080/api2/products
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.sample-token

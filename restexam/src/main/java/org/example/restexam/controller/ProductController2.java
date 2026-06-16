@@ -1,6 +1,9 @@
 package org.example.restexam.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.example.restexam.dto.ProductDTO;
+import org.example.restexam.service.ProductService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,7 +12,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api2/products")
+@RequiredArgsConstructor
 public class ProductController2 {
+    private final ProductService service;
 
     @GetMapping(value = "/xml", produces = "application/xml")
     public ResponseEntity<List<ProductDTO>> getProductsAsXml(){
@@ -31,9 +36,10 @@ public class ProductController2 {
     }
 
     @PostMapping
-    public ProductDTO createProduct(@RequestBody ProductDTO productDTO){
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO){
 
-        return productDTO;
+        ProductDTO product = service.createProduct(productDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(product);
     }
 
     @PutMapping("/{id}")

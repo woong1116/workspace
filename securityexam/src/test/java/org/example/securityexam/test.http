@@ -1,0 +1,13 @@
+###
+GET http://localhost:8080
+Authorization: Basic Y2FyYW1pOjEyMzQ=
+Accept: */*
+
+
+###
+GET http://localhost:8080
+
+
+
+###
+POST http://localhost:8080/logout
