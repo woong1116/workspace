@@ -15,6 +15,13 @@ spring:
       hibernate:
         format_sql: true
 
+
+jwt:
+  secretKey: aPQbsKV7CZZDls/cnhW1EjqlGux45LAbBYpBhyk7nAk=
+  refreshKey: 123456789010123456789023u454954958495w43434
+  access-expiration-ms: 1800000
+  refresh-expiration-ms: 604800000
+
 #  security:
 #    user:
 #      name: carami

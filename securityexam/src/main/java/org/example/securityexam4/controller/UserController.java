@@ -35,13 +35,17 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/loginForm")
-    public String loginForm() {
-        return "exam4/user/loginForm";
+//    로그인 폼을 요청하는 것 까지 구현해보세요.    1. controller 메서드추가 2. 화면 추가  3. 시큐리티 설정!!
+    @GetMapping("/login")
+    public String loginForm(){
+        return "exam4/user/loginform";
     }
 
 
-
+    @GetMapping("/myinfo")
+    public String myInfo(){
+        return "exam4/user/myinfo";
+    }
 }
 //1. 회원가입 폼이 요청되었는데.. 지금은 인증하라고 나와요.  그런데 이것을 인증없이 보여지도록 설정!!
 //2. 회원가입시에 이미 존재하는 username 이 있다면 다르게 처리하고 싶다면..  무엇을 구현해야할까요?

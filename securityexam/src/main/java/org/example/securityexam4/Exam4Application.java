@@ -18,19 +18,20 @@ public class Exam4Application {
     }
 
     @Bean
-    public CommandLineRunner run(RoleRepository roleRepository) {
+    public CommandLineRunner run(RoleRepository roleRepository){
         return args -> {
-            if (roleRepository.count() == 0) {
-                Role userRole = new Role();
-                userRole.setName("USER");
-                Role adminRole = new Role();
-                adminRole.setName("ADMIN");
+          if(roleRepository.count() == 0){
+              Role userRole = new Role();
+              userRole.setName("USER");
+              Role adminRole = new Role();
+              adminRole.setName("ADMIN");
 
-                roleRepository.saveAll(List.of(userRole, adminRole));
-                log.info("USER, ADMIN 권한이 추가되었습니다.");
-            }else {
-                log.info("권한정보가 이미 존재합니다.");
-            }
+              roleRepository.saveAll(List.of(userRole,adminRole));
+              log.info("USER,ADMIN 권한이 추가되었습니다." );
+          }else{
+              log.info("권한정보가 이미 존재합니다.");
+          }
         };
     }
+
 }
