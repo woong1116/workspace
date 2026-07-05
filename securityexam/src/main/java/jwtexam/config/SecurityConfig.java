@@ -29,7 +29,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception{
         http
                 .authorizeHttpRequests(auth->auth
-                        .requestMatchers("/api/login").permitAll()
+                        .requestMatchers("/api/login","/api/refreshToken").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenizer), UsernamePasswordAuthenticationFilter.class)
@@ -54,9 +54,9 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowCredentials(true); //쿠키를 허용할 까요?
         configuration.setAllowedOriginPatterns(List.of(
-           "http://localhost:3000",
-           "http://localhost:3001",
-           "http://localhost:8080"
+                "http://localhost:3000",
+                "http://localhost:3001",
+                "http://localhost:8080"
         )); //어떤 도메인들에게 허용할것인지..
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));

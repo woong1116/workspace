@@ -15,11 +15,22 @@ spring:
       hibernate:
         format_sql: true
 
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23liSsdQxWkfHO9tXT
+            client-secret: 59411c35f2a07b889edc4c6f2d239ade4b772124
+            scope:
+              - read:user
+              - user:email
+
 
 jwt:
   secretKey: aPQbsKV7CZZDls/cnhW1EjqlGux45LAbBYpBhyk7nAk=
   refreshKey: 123456789010123456789023u454954958495w43434
-  access-expiration-ms: 1800000
+  access-expiration-ms: 10000
   refresh-expiration-ms: 604800000
 
 #  security:
