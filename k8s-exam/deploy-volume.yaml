@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volume-demo-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: volume-demo
+  template:
+    metadata:
+      labels:
+        app: volume-demo
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: my-data-volume
+          mountPath: /data         # 컨테이너 내부 경로
+      volumes:
+      - name: my-data-volume
+        persistentVolumeClaim:
+          claimName: my-pvc        # PVC 이름

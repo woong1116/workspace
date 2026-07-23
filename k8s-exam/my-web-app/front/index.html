@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes 실습</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Hello Kubernetes!</h1>
+        <p>안녕하세요! Kubernetes에 배포된 웹 애플리케이션입니다.</p>
+        <div class="info">
+            <p><strong>Pod 이름:</strong> <span id="hostname">Loading...</span></p>
+            <p><strong>현재 시간:</strong> <span id="time"></span></p>
+        </div>
+        <button onclick="updateTime()">시간 업데이트</button>
+
+        <div class="api-section">
+            <h2>🔗 백엔드 API 연동</h2>
+            <p id="api-status">연결 중...</p>
+            <p><strong>API 응답:</strong> <span id="api-response">Loading...</span></p>
+            <button onclick="callBackendAPI()">API 재호출</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

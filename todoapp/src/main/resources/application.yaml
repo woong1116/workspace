@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: todoapp
+
+  datasource:
+    url: jdbc:mysql://local-mysql:3306/tododb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username: ${DB_USERNAME:todouser}
+    password: ${DB_PASSWORD:todo1234}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+        show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
+          - loggers
+          - threaddump
+          - env
+          - prometheus
+
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+  health:
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
+
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "My Spring Boot Application"
+    version: "1.0.0"
+  team: "Backend Development Team"

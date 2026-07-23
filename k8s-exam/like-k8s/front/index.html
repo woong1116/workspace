@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kubernetes 3-Tier App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Kubernetes 3-Tier App</h1>
+      <p>프론트엔드 - 백엔드 - 데이터베이스 연동 실습</p>
+
+      <div class="info">
+        <p><strong>현재 시간:</strong> <span id="time"></span></p>
+        <p id="api-status">백엔드 연결 확인 중...</p>
+      </div>
+
+      <div class="user-section">
+        <h2>👥 사용자 관리</h2>
+
+        <!-- 사용자 추가 폼 -->
+        <div class="form-group">
+          <input type="text" id="userName" placeholder="이름" />
+          <input type="email" id="userEmail" placeholder="이메일" />
+          <button onclick="createUser()">사용자 추가</button>
+        </div>
+
+        <!-- 사용자 목록 -->
+        <div class="user-list">
+          <h3>📋 사용자 목록</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>생성일</th>
+                <th>작업</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody">
+              <!-- JavaScript로 동적 생성 -->
+            </tbody>
+          </table>
+        </div>
+
+        <button onclick="loadUsers()" class="refresh-btn">🔄 새로고침</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
